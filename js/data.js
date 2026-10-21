@@ -3,91 +3,91 @@
 window.QUIZ_DATA = {
   provinces: {
     qc: {
-      slug: "quebec", name: "Québec", art: "le Québec", img: "qc-frontenac",
+      slug: "quebec", name: "Québec", art: "le Québec", to: "au Québec", img: "qc-frontenac",
       tag: "Le cœur francophone de l'Amérique",
       desc: "Vivre entièrement en français, entre la vie trépidante de Montréal, le charme historique de Québec et les grands espaces de la Gaspésie. Les hivers sont enneigés, les étés chauds et festifs.",
       facts: ["Villes : Montréal, Québec, Gatineau", "Le français est la seule langue officielle", "Des centaines de festivals chaque année"],
       immig: "Le Québec sélectionne lui-même ses travailleurs qualifiés (programme PSTQ, et le PEQ rouvert en 2026). Le français y est un atout majeur, souvent exigé."
     },
     on: {
-      slug: "ontario", name: "Ontario", art: "l'Ontario", img: "on-toronto",
+      slug: "ontario", name: "Ontario", art: "l'Ontario", to: "en Ontario", img: "on-toronto",
       tag: "Les grandes ambitions",
       desc: "La province la plus peuplée du Canada : Toronto pour la carrière, Ottawa la capitale bilingue, et les chutes du Niagara pour le week-end. Un marché de l'emploi immense et très diversifié.",
       facts: ["Villes : Toronto, Ottawa, Sudbury", "La plus grande communauté francophone hors Québec", "Capitale fédérale : Ottawa"],
       immig: "Sudbury, Timmins et la région de Superior East participent au projet pilote d'immigration dans les communautés francophones."
     },
     bc: {
-      slug: "colombie-britannique", name: "Colombie-Britannique", art: "la Colombie-Britannique", img: "bc-vancouver",
+      slug: "colombie-britannique", name: "Colombie-Britannique", art: "la Colombie-Britannique", to: "en Colombie-Britannique", img: "bc-vancouver",
       tag: "Entre océan et montagnes",
       desc: "Le climat le plus doux du pays, avec des montagnes qui plongent dans le Pacifique. Vancouver est cosmopolite et ouverte sur l'Asie, mais le logement y coûte cher.",
       facts: ["Villes : Vancouver, Victoria, Kelowna", "Les hivers les plus doux du Canada sur la côte", "Ski et surf le même jour, c'est possible"],
       immig: "Kelowna participe au projet pilote d'immigration dans les communautés francophones."
     },
     ab: {
-      slug: "alberta", name: "Alberta", art: "l'Alberta", img: "ab-moraine",
+      slug: "alberta", name: "Alberta", art: "l'Alberta", to: "en Alberta", img: "ab-moraine",
       tag: "Rocheuses et opportunités",
       desc: "Les lacs turquoise des Rocheuses à une heure de Calgary, une économie portée par l'énergie et la construction, et des salaires parmi les plus élevés du pays.",
       facts: ["Villes : Calgary, Edmonton", "Pas de taxe de vente provinciale", "Parcs nationaux de Banff et Jasper"],
       immig: "Le programme provincial cible surtout les métiers en demande. Edmonton a une communauté francophone active."
     },
     mb: {
-      slug: "manitoba", name: "Manitoba", art: "le Manitoba", img: "mb-forks",
+      slug: "manitoba", name: "Manitoba", art: "le Manitoba", to: "au Manitoba", img: "mb-forks",
       tag: "Le cœur des Prairies",
       desc: "Une vie abordable et chaleureuse au centre du pays. Winnipeg abrite Saint-Boniface, le grand quartier francophone de l'Ouest canadien. Les hivers sont froids, mais ensoleillés.",
       facts: ["Villes : Winnipeg, Brandon", "Saint-Boniface, quartier francophone historique", "Logement parmi les plus abordables"],
       immig: "Saint-Pierre-Jolys participe au projet pilote des communautés francophones, et le Manitoba recrute activement des francophones."
     },
     sk: {
-      slug: "saskatchewan", name: "Saskatchewan", art: "la Saskatchewan", img: "sk-prairie",
+      slug: "saskatchewan", name: "Saskatchewan", art: "la Saskatchewan", to: "en Saskatchewan", img: "sk-prairie",
       tag: "La terre des ciels infinis",
       desc: "Des champs à perte de vue, un ciel immense et un coût de la vie très bas. L'agriculture, les mines et l'énergie recrutent. Idéal pour qui veut s'installer vite et acheter une maison.",
       facts: ["Villes : Saskatoon, Regina", "L'une des provinces les plus ensoleillées", "Agriculture, potasse et énergie"],
       immig: "Le programme provincial vise les métiers en demande, souvent avec une offre d'emploi."
     },
     nb: {
-      slug: "nouveau-brunswick", name: "Nouveau-Brunswick", art: "le Nouveau-Brunswick", img: "nb-hopewell",
+      slug: "nouveau-brunswick", name: "Nouveau-Brunswick", art: "le Nouveau-Brunswick", to: "au Nouveau-Brunswick", img: "nb-hopewell",
       tag: "La seule province officiellement bilingue",
       desc: "L'Acadie vivante : environ un tiers de la population parle français. Moncton est une ville bilingue en plein essor, à deux pas de la mer et des plus hautes marées du monde.",
       facts: ["Villes : Moncton, Fredericton, Saint-Jean", "Officiellement bilingue (français/anglais)", "Baie de Fundy et ses marées géantes"],
       immig: "Le programme provincial a un volet réservé aux francophones, et la Péninsule acadienne participe au projet pilote des communautés francophones."
     },
     ns: {
-      slug: "nouvelle-ecosse", name: "Nouvelle-Écosse", art: "la Nouvelle-Écosse", img: "ns-cabot",
+      slug: "nouvelle-ecosse", name: "Nouvelle-Écosse", art: "la Nouvelle-Écosse", to: "en Nouvelle-Écosse", img: "ns-cabot",
       tag: "La mer à chaque coin de rue",
       desc: "Des phares, des villages de pêcheurs et Halifax, une ville universitaire jeune et animée. Le rythme est détendu et l'océan n'est jamais loin.",
       facts: ["Villes : Halifax, Sydney", "Communautés acadiennes (Clare, Chéticamp)", "Fruits de mer et homard réputés"],
       immig: "Le Programme d'immigration au Canada atlantique aide les employeurs de la région à recruter à l'étranger."
     },
     pe: {
-      slug: "ile-du-prince-edouard", name: "Île-du-Prince-Édouard", art: "l'Île-du-Prince-Édouard", img: "pe-cavendish",
+      slug: "ile-du-prince-edouard", name: "Île-du-Prince-Édouard", art: "l'Île-du-Prince-Édouard", to: "à l'Île-du-Prince-Édouard", img: "pe-cavendish",
       tag: "La douceur de vivre insulaire",
       desc: "La plus petite province : des plages de sable rouge, des fermes et une vie paisible où tout le monde se connaît. Parfait pour une vie de famille au calme.",
       facts: ["Ville : Charlottetown", "La plus petite province du Canada", "Communauté acadienne de la région Évangéline"],
       immig: "Le Programme d'immigration au Canada atlantique y est ouvert aux employeurs de l'île."
     },
     nl: {
-      slug: "terre-neuve-et-labrador", name: "Terre-Neuve-et-Labrador", art: "Terre-Neuve-et-Labrador", img: "nl-jellybean",
+      slug: "terre-neuve-et-labrador", name: "Terre-Neuve-et-Labrador", art: "Terre-Neuve-et-Labrador", to: "à Terre-Neuve-et-Labrador", img: "nl-jellybean",
       tag: "Le Canada le plus proche de l'Europe",
       desc: "Des maisons colorées, des icebergs au printemps et des habitants réputés pour leur chaleur humaine. Le point le plus à l'est de l'Amérique du Nord.",
       facts: ["Ville : St. John's", "Cap Spear, point le plus à l'est du continent", "Petite communauté francophone à Port-au-Port"],
       immig: "Le Programme d'immigration au Canada atlantique et un programme provincial facilitent la venue de travailleurs."
     },
     yt: {
-      slug: "yukon", name: "Yukon", art: "le Yukon", img: "yt-kathleen",
+      slug: "yukon", name: "Yukon", art: "le Yukon", to: "au Yukon", img: "yt-kathleen",
       tag: "L'aventure du Grand Nord",
       desc: "Montagnes sauvages, soleil de minuit l'été et aurores boréales l'hiver. Whitehorse est petite mais dynamique, avec une communauté francophone accueillante.",
       facts: ["Ville : Whitehorse", "Parc national Kluane", "Communauté franco-yukonnaise active"],
       immig: "Le territoire a son propre programme de candidats, généralement lié à une offre d'emploi."
     },
     nt: {
-      slug: "territoires-du-nord-ouest", name: "Territoires du Nord-Ouest", art: "les Territoires du Nord-Ouest", img: "nt-aurora",
+      slug: "territoires-du-nord-ouest", name: "Territoires du Nord-Ouest", art: "les Territoires du Nord-Ouest", to: "aux Territoires du Nord-Ouest", img: "nt-aurora",
       tag: "La capitale des aurores boréales",
       desc: "Yellowknife est l'un des meilleurs endroits au monde pour voir les aurores. Mines de diamants, salaires élevés et nature immense pour ceux qui aiment le froid.",
       facts: ["Ville : Yellowknife", "11 langues officielles, dont le français", "Mines de diamants"],
       immig: "Le territoire a son propre programme de candidats, généralement lié à une offre d'emploi."
     },
     nu: {
-      slug: "nunavut", name: "Nunavut", art: "le Nunavut", img: "nu-pangnirtung",
+      slug: "nunavut", name: "Nunavut", art: "le Nunavut", to: "au Nunavut", img: "nu-pangnirtung",
       tag: "Le grand dépaysement arctique",
       desc: "Le territoire inuit : banquise, fjords et culture unique. La vie y est chère et isolée, mais les salaires sont élevés et l'expérience inoubliable.",
       facts: ["Ville : Iqaluit", "Le français y est langue officielle", "Accessible surtout en avion"],

@@ -18,7 +18,7 @@ Test URL: https://quiz.kallistesoft.ca (`noindex` and `robots.txt` block search 
     node tools/check_scoring.mjs   # every province can win, none wins too often
 
 ## Moving to the lawyer's domain
-1. In `js/config.js`, set `SITE_URL`, `BOOKING_URL`, `AUDIT_URL`, `EBOOK_URL` (and the AdSense IDs).
+1. In `js/config.js`, set `SITE_URL` (and the AdSense IDs). Button links are in the same file: `BOOKING_URL`, `AUDIT_URL`, and `EBOOK_URLS` (per province, so the ebook button only shows for those provinces).
 2. Run `node tools/build_pages.mjs`.
 3. Remove `noindex` from the pages (`tools/build_pages.mjs`, `question/`, `resultat/`) and replace `robots.txt` if the quiz should be indexed.
 4. Update `CNAME` (or delete it if it's hosted somewhere other than GitHub Pages).

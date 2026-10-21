@@ -4,11 +4,17 @@ window.QUIZ_CONFIG = {
   // and by tools/gen_share_pages.mjs (run it again after changing this).
   SITE_URL: "https://quiz.kallistesoft.ca",
 
-  // Result-page buttons. "?province=<slug>" is added to each link.
+  // Result-page buttons. "utm_source=quiz&utm_content=<province slug>" is
+  // added to each link, so Calendly and systeme.io show where a visitor came from.
   // Empty = placeholder (the button stays visible but goes nowhere).
-  BOOKING_URL: "",
-  AUDIT_URL: "",
-  EBOOK_URL: "",
+  BOOKING_URL: "https://calendly.com/vanessa-poughon-avocat/consultation-immigration-canadienne-60-mn",
+  AUDIT_URL: "https://a5c6-contact.systeme.io/ec75652d",
+
+  // Ebook per province id (see js/data.js). The button only appears for
+  // provinces listed here.
+  EBOOK_URLS: {
+    ab: "https://a5c6-contact.systeme.io/guidealberta"
+  },
 
   // Google AdSense. Leave empty to hide the ad slots.
   // A cookie-consent banner (Google-certified CMP) is required before going live for EU visitors.
