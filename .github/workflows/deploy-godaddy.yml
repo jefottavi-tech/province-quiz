@@ -1,0 +1,31 @@
+name: Deploy to GoDaddy
+
+# Manual for now; switch to push on main after the DNS cutover.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Plain HTML, no build step: the generated pages are committed.
+      # Copy the site without repo-only files.
+      - run: |
+          mkdir site
+          rsync -a --exclude site --exclude .git --exclude .github --exclude tools \
+            --exclude README.md --exclude CNAME --exclude .gitignore --exclude .nojekyll ./ site/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site
+
+  deploy:
+    needs: build
+    uses: kallistesoft/kallistesoft-site/.github/workflows/deploy-ftp.yml@main
+    with:
+      folder: quiz.kallistesoft.ca
+    secrets: inherit
