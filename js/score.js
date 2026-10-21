@@ -20,3 +20,15 @@ window.QUIZ_SCORE = function (answers) {
     })
     .sort(function (x, y) { return y.ratio - x.ratio; });
 };
+
+// The result to show: the winner after QUIZ_DATA.resultMap is applied, and
+// the next 3 provinces that can be shown as a result.
+window.QUIZ_RESULT = function (answers) {
+  var ranks = window.QUIZ_SCORE(answers), map = window.QUIZ_DATA.resultMap || {};
+  var id = map[ranks[0].id] || ranks[0].id;
+  return {
+    id: id,
+    pct: ranks[0].pct,
+    others: ranks.filter(function (r) { return !map[r.id] && r.id !== id; }).slice(0, 3)
+  };
+};

@@ -93,15 +93,14 @@
     var answers = parseAnswers(params.get("a") || "");
     if (!answers || answers.length !== TOTAL) return location.replace("../");
 
-    var ranks = window.QUIZ_SCORE(answers);
-    var top = ranks[0], p = D.provinces[top.id];
+    var top = window.QUIZ_RESULT(answers), p = D.provinces[top.id];
     var shareUrl = C.SITE_URL + "/p/" + p.slug + "/";
     var ebook = (C.EBOOK_URLS || {})[top.id];
     var shareText = "Je suis fait(e) pour " + p.art + " 🇨🇦 Et vous ? Faites le quiz :";
     document.title = "Vous êtes fait(e) pour " + p.art + " !";
     setPhoto(p.img);
 
-    var others = ranks.slice(1, 4).map(function (r) {
+    var others = top.others.map(function (r) {
       var o = D.provinces[r.id];
       return '<div class="other"><span>' + esc(o.name) + "</span><em>" + r.pct + ' %</em><div class="track"><span style="--pct:' + r.pct + '%"></span></div></div>';
     }).join("");

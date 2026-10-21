@@ -7,7 +7,7 @@ import vm from "node:vm";
 const ctx = { window: {} };
 vm.createContext(ctx);
 for (const f of ["js/data.js", "js/score.js"]) vm.runInContext(readFileSync(new URL("../" + f, import.meta.url), "utf8"), ctx);
-const { QUIZ_DATA: data, QUIZ_SCORE: score } = ctx.window;
+const { QUIZ_DATA: data, QUIZ_SCORE: score, QUIZ_RESULT: result } = ctx.window;
 const ids = Object.keys(data.provinces);
 let ok = true;
 const fail = (m) => { console.log("FAIL", m); ok = false; };
@@ -33,6 +33,18 @@ for (const id of ids) {
   if (top.id !== id) fail(`${id} can't win with its best answers (got ${top.id})`);
 }
 
+// resultMap: targets must be real provinces, and a mapped id is never shown.
+const map = data.resultMap || {};
+for (const [from, to] of Object.entries(map)) if (!ids.includes(from) || !ids.includes(to) || map[to]) fail(`bad resultMap entry ${from} → ${to}`);
+const shownWins = {};
+for (let n = 0; n < 20000; n++) {
+  const r = result(data.questions.map((q) => Math.floor(Math.random() * q.a.length)));
+  if (map[r.id] || r.others.some((o) => map[o.id] || o.id === r.id)) fail(`mapped or duplicate id in result ${r.id}`);
+  shownWins[r.id] = (shownWins[r.id] || 0) + 1;
+}
+console.log("shown results:", Object.entries(shownWins).sort((a, b) => b[1] - a[1]).map(([id, w]) => `${id} ${(w / 200).toFixed(1)}%`).join(", "));
+
+// Raw score balance (before resultMap)
 for (const id of ids) {
   const share = wins[id] / N;
   console.log(id.padEnd(3), (share * 100).toFixed(1).padStart(5) + "%");

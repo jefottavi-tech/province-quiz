@@ -95,6 +95,10 @@ window.QUIZ_DATA = {
     }
   },
 
+  // Results shown as another province: the territories still score
+  // (and appear in questions), but a territory winner is shown as Alberta.
+  resultMap: { yt: "ab", nt: "ab", nu: "ab" },
+
   // img = photo file in img/, place = caption shown on the photo
   questions: [
     { img: "qc-frontenac", place: "Québec, Québec", q: "L'hiver, pour vous, c'est…", a: [

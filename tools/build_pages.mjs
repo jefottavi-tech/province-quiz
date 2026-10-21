@@ -54,7 +54,8 @@ ${body}
 `;
 }
 
-const provinceChips = Object.values(D.provinces).map((p) => `<span>${esc(p.name)}</span>`).join("");
+const shown = Object.entries(D.provinces).filter(([id]) => !(D.resultMap || {})[id]).map(([, p]) => p);
+const provinceChips = shown.map((p) => `<span>${esc(p.name)}</span>`).join("");
 
 function landing({ base, image, kicker, heading }) {
   return `  <section class="hero">
@@ -63,7 +64,7 @@ function landing({ base, image, kicker, heading }) {
     ${kicker ? `<p class="eyebrow">${kicker}</p>` : ""}
     <h1>${heading}</h1>
     <p>Climat, travail, langue, mode de vie : trouvez la région du Canada qui vous ressemble.</p>
-    <div class="chips"><span class="chip">⏱ 3 minutes</span><span class="chip">20 questions</span><span class="chip">🇨🇦 13 régions</span></div>
+    <div class="chips"><span class="chip">⏱ 3 minutes</span><span class="chip">20 questions</span><span class="chip">🇨🇦 ${shown.length} provinces</span></div>
   </section>
   <div class="start">
     <a class="btn btn-red pulse" href="${base}question/?q=1&amp;a=">Commencer le quiz →</a>

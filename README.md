@@ -10,7 +10,7 @@ Test URL: https://quiz.kallistesoft.ca (`noindex` and `robots.txt` block search 
 - `question/`: one page per question (`?q=4&a=021`). Each answer is a real page load, so ads count one view per question.
 - `resultat/`: result page (`?a=<20 answers>`).
 - `js/config.js`: site URL, button links, AdSense IDs. **This is the only file to edit when moving the quiz.**
-- `js/data.js`: provinces, questions and answer weights.
+- `js/data.js`: provinces, questions and answer weights. `resultMap` shows the territories (Yukon, NWT, Nunavut) as Alberta.
 - `js/score.js`: scoring.
 - `img/`: Wikimedia Commons photos (licences in `img/credits.json`, shown on `/credits/`).
 
