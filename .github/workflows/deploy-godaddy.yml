@@ -1,7 +1,8 @@
 name: Deploy to GoDaddy
 
-# Manual for now; switch to push on main after the DNS cutover.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
