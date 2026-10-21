@@ -5,6 +5,7 @@
 //   node tools/build_pages.mjs
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from "node:fs";
 import vm from "node:vm";
+import { createHash } from "node:crypto";
 
 const root = new URL("../", import.meta.url);
 const read = (f) => readFileSync(new URL(f, root), "utf8");
@@ -110,4 +111,16 @@ write("credits/index.html", page({
   </section>`,
 }));
 
-console.log(`Built index.html, ${Object.keys(D.provinces).length} share pages, credits/`);
+// Cache busting: browsers keep css/js for 10 minutes (GitHub Pages), so a
+// visitor could mix a new quiz.js with an old score.js and get a blank page.
+// Every css/js link gets ?v=<content hash>, so a page always loads one
+// consistent set of files.
+const version = Object.fromEntries(["css/style.css", "js/config.js", "js/data.js", "js/score.js", "js/quiz.js"]
+  .map((f) => [f, createHash("sha1").update(read(f)).digest("hex").slice(0, 8)]));
+const pages = ["index.html", "question/index.html", "resultat/index.html", "credits/index.html",
+  ...Object.values(D.provinces).map((p) => `p/${p.slug}/index.html`)];
+for (const f of pages) {
+  write(f, read(f).replace(/((?:css|js)\/[a-z]+\.(?:css|js))(\?v=[0-9a-f]+)?"/g, (m, file) => `${file}?v=${version[file]}"`));
+}
+
+console.log(`Built index.html, ${Object.keys(D.provinces).length} share pages, credits/; versioned css/js in ${pages.length} pages`);
